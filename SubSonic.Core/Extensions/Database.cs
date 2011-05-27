@@ -451,6 +451,7 @@ namespace SubSonic.Extensions
             if(tbl != null)
             {
                 var hashed = item.ToDictionary();
+                hashed.Remove("Columns");
                 query = new Insert(provider).Into<T>(tbl);
                 foreach(string key in hashed.Keys)
                 {
